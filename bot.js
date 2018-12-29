@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`M0nsters Bot Online ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
+client.user.setGame(`M0nsters ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
   console.log('')
   console.log('')
   console.log('?[?????????????????????????????????????????????????????????????????]?')
@@ -31,7 +31,7 @@ client.user.setGame(`M0nsters Bot Online ♥♥ *invite `,"https://www.twitch.tv
 
 
 client.on("message", message => {
- if (message.content === "*invite") {
+ if (message.content === "*inv") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('M0nsters B0T: جميع الحقوق محفوظة 2018 لــبوت')  
@@ -281,7 +281,7 @@ message.channel.send(embed)
         .addField("*say",' يكرر كلامك بالبوت ')
         .addField("*ly",' يطلعلك كلمات الاغنيه ')
         .addField("*clear",' يمسح الشات ')
-        .addField("*invite",' يعطيك رابط البوت ')
+        .addField("*inv",' يعطيك رابط البوت ')
         .addField("*id",' يطلعلك ايديك ')
         .addField("*new",' يسوي تيكيت ')
         .setColor("RANDOM")
@@ -921,18 +921,6 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
  
         logChannel.send(voiceLeave);
     }
-});
-
-
-
-client.on('message', async msg => {
-  if(msg.content.startsWith('*servers')) {
-    let output = '**Servers**\n';
-    client.guilds.forEach(guild => {
-      output += `**Name**: ${guild.name}, **ID**: ${guild.id}, **MembersCount**: ${guild.memberCount}, **Owner**: ${guild.owner}`;
-    });
-    msg.channel.send(output);
-  }
 });
 
 
